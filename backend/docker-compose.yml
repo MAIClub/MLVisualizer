@@ -1,0 +1,14 @@
+version: '3.7'
+services:
+  server:
+    container_name: backend_mai
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - "8008:8008"
+    environment:
+      - PORT=8008      
+    entrypoint: /start-reload.sh

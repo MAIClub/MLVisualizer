@@ -14,3 +14,4 @@ If you want to participate to meetings and development process you can send an e
 - FastAPI
 - Pandas
 - Matplotlib
+- Docker

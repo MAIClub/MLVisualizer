@@ -1,26 +1,22 @@
 import pandas as pd
 import os
 
+
+def read_csv(file_name):
+    data = pd.read_csv("{}/backend/app/datasets/data/{}".format(os.getcwd(), file_name))
+    head = data.head(20)
+    summary = data.sum()
+    return data, head, summary
+
 def load_rice():
-    Rice = pd.read_csv(os.getcwd()+"/backend/app/datasets/data/riceClassification.csv")
-    head = Rice.head(20)
-    summary = Rice.sum()
-    return Rice, head, summary
+    return read_csv("riceClassification.csv")
 
 def load_world_population():
-    WorldPopulation = pd.read_csv(os.getcwd()+"/backend/app/datasets/data/WorldPopulation.csv")
-    head = WorldPopulation.head(20)
-    summary = WorldPopulation.sum()
-    return WorldPopulation, head, summary
+    return read_csv("WorldPopulation.csv")
 
 def load_pokemon():
-    Pokemon = pd.read_csv(os.getcwd()+"/backend/app/datasets/data/pokemon.csv")
-    head = Pokemon.head(20)
-    summary = Pokemon.sum()
-    return Pokemon, head, summary
+    return read_csv("pokemon.csv")
 
 def load_water_potability():
-    WaterPotability = pd.read_csv(os.getcwd()+"/backend/app/datasets/data/water_potability.csv")
-    head = WaterPotability.head(20)
-    summary = WaterPotability.sum()
-    return WaterPotability, head, summary
+    return read_csv("water_potability.csv")
+
